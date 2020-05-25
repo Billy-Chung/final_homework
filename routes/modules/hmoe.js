@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
         const id = req.params.id
         Shortener.find({ fakerUrl: id })
           .lean()
-          .then(xxx => {
+          .then(xxx => {              
             newUrl = xxx[0].url      
             res.redirect(`${newUrl}`)
           })
