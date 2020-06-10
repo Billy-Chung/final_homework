@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
           checkBox.push(item.fakerUrl)
         })
         while (checkBox.includes(fakerUrl)) {
-          fakerUrl = generateShortURL()
+          fakerUrl = fakerUrl()
         }
         return fakerUrl
       })
