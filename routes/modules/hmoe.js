@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Shortener = require('../../modules/shortener')
-const  getShortUrl = require('../../getShortUrl') 
+
 
 
 
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     let inputUrl = req.body.inputUrl
   
     //產生短網址
-    let fakerUrl = getShortUrl()  
+    let fakerUrl = Math.random().toString(36).slice(-5)
   
     return Shortener.find()
       .then(check => {
