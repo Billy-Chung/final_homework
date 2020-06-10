@@ -4,7 +4,6 @@ const Shortener = require('../../modules/shortener')
 
 
 
-
 // 設定首頁路由
 router.get('/', (req, res) => {
     res.render('index')
@@ -25,7 +24,7 @@ router.get('/', (req, res) => {
           checkBox.push(item.fakerUrl)
         })
         while (checkBox.includes(fakerUrl)) {
-          fakerUrl = fakerUrl()
+          fakerUrl = generateShortURL()
         }
         return fakerUrl
       })
